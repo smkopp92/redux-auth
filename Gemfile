@@ -16,6 +16,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'jquery-rails'
 gem 'bcrypt'
+gem 'coffee-rails', '~> 4.2'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -33,7 +34,7 @@ group :test do
   gem 'selenium-webdriver'
   gem 'chromedriver-helper'
   gem 'launchy', require: false
-  gem 'shoulda-matchers'
+  gem 'shoulda'
 end
 
 group :development, :test do
