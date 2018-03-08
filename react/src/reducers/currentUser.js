@@ -17,7 +17,7 @@ const currentUser = (state = initialState, action) => {
       });
     case SIGN_UP_USER_REQUEST_SUCCESS:
       return Object.assign({}, state, {
-        currentUser: action.newUser.username,
+        currentUser: action.user,
         isFetching: false
       });
     case SIGN_UP_USER_REQUEST_FAILURE:

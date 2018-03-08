@@ -4,7 +4,7 @@ require 'rails_helper'
 RSpec.describe Api::V1::UsersController, type: :controller do
   let(:valid_attributes) {
     {
-      username: "sebdog",
+      username: "sebdawg",
       password: "awesome password",
       password_confirmation: "awesome password"
     }
@@ -27,7 +27,7 @@ RSpec.describe Api::V1::UsersController, type: :controller do
 
       it "returns the username in json form" do
         post :create, params: { user: valid_attributes }
-        expect(response.body).to eq "sebdog"
+        expect(response.body).to eq "sebdawg"
       end
     end
 

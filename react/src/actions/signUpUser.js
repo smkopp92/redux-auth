@@ -23,19 +23,20 @@ let signUpUserRequestFailure = () => {
 
 let signUpUser = (newUser) => dispatch => {
   dispatch(signUpUserRequest())
-  fetch(`api/v1/users`, {
+  fetch(`api/v1/users.json`, {
     method: "POST",
+    credentials: 'same-origin',
     headers: {
-      'Accept': 'application/json, text/plain, */*',
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify(newUser)
+    body: JSON.stringify({
+      user: newUser
+    })
   })
+
   .then((response) => response.json())
-  .then((response) => {
-    debugger
-  })
-  .catch(() => dispatch(signUpUserRequestFailure()))
+  .then((response) => dispatch(signUpUserRequestSuccess(response.user)))
+  .catch((error) => dispatch(signUpUserRequestFailure()))
 };
 
 export { signUpUser };
