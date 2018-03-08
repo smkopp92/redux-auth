@@ -1,21 +1,22 @@
 import { combineReducers } from 'redux';
 import { routerReducer as routing } from 'react-router-redux';
 import { reducer as formReducer } from 'redux-form';
-// import { ADD_NOTE_REQUEST_SUCCESS} from '../actions/addNote';
+import { SIGN_UP_USER_REQUEST_SUCCESS } from '../actions/signUpUser';
 
-// import notes from '../reducers/notes';
+import currentUser from '../reducers/currentUser';
 
 let rootReducer = combineReducers({
-  // form: formReducer.plugin({
-  //   note: (state, action) => {
-  //     switch(action.type) {
-  //       case ADD_NOTE_REQUEST_SUCCESS:
-  //         return undefined;
-  //       default:
-  //         return state;
-  //     }
-  //   },
-  // notes,
+  form: formReducer.plugin({
+    signup: (state, action) => {
+      switch(action.type) {
+        case SIGN_UP_USER_REQUEST_SUCCESS:
+          return undefined;
+        default:
+          return state;
+      }
+    }
+  }),
+  currentUser,
   routing
 });
 

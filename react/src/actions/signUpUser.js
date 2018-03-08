@@ -25,6 +25,10 @@ let signUpUser = (newUser) => dispatch => {
   dispatch(signUpUserRequest())
   fetch(`api/v1/users`, {
     method: "POST",
+    headers: {
+      'Accept': 'application/json, text/plain, */*',
+      'Content-Type': 'application/json'
+    },
     body: JSON.stringify(newUser)
   })
   .then((response) => response.json())

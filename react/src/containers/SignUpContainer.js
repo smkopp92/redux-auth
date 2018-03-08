@@ -17,7 +17,7 @@ class SignUpContainer extends React.Component {
     return (
       <div>
         <h1>Sign Up!</h1>
-        <SignUpForm handleSubmit={this.handleSubmit}/>
+        <SignUpForm onSubmit={this.handleSubmit}/>
       </div>
     )
   }

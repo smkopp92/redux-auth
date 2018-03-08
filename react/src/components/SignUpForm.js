@@ -34,13 +34,13 @@ let SignUpForm = props => {
         name="password"
         label="Password"
         component={PasswordField}
-        type="text"
+        type="password"
       />
       <Field
-        name="password confirmation"
+        name="passwordConfirmation"
         label="Password Confirmation"
         component={PasswordConfirmationField}
-        type="text"
+        type="password"
       />
       <button type="submit">Sign Up</button>
     </form>
@@ -48,7 +48,7 @@ let SignUpForm = props => {
 }
 
 SignUpForm = reduxForm({
-  form: 'sign up',
+  form: 'signup',
   validate
 })(SignUpForm)
 
