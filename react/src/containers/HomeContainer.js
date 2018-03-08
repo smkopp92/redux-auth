@@ -7,7 +7,10 @@ import {
 class HomeContainer extends React.Component {
   render(){
     return (
-      <h1>Sign in or sign up!</h1>
+      <div>
+        <Link to="/signin"><h1>Sign In</h1></Link>
+        <Link to="/signup"><h1>Sign Up</h1></Link>
+      </div>
     )
   }
 }
